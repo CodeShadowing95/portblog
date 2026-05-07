@@ -5,9 +5,9 @@ const Home = () => {
     <main className="flex flex-1 flex-col">
       <div className="flex flex-1 items-center">
         <div className="mx-auto flex w-full max-w-6xl flex-col justify-between gap-10">
-          <section className="flex w-full items-center justify-between gap-6">
-            <div className="text-5xl leading-none sm:text-6xl">🧑🏿‍💻</div>
-            <h1 className="text-right text-5xl font-semibold leading-none tracking-tight sm:text-7xl lg:text-8xl">
+          <section className="flex w-full items-center justify-between">
+            <div className="flex-1 text-5xl leading-none sm:text-6xl">🧑🏿‍💻</div>
+            <h1 className=" flex-1 text-5xl font-semibold leading-none tracking-tight sm:text-7xl lg:text-8xl">
               Patrick
               <br />
               NAMEGNI

@@ -48,7 +48,7 @@ const Navbar = () => {
                         CV
                     </Link>
                     <Link href="/portfolio" className="transition hover:text-white">
-                        Travaux
+                        Réalisations
                     </Link>
                     <Link href="/blog" className="transition hover:text-white">
                         Blog
@@ -71,13 +71,13 @@ const Navbar = () => {
                     </a>
 
                     <a
-                        href="https://instagram.com/"
+                        href="https://github.com/CodeShadowing95/"
                         target="_blank"
                         rel="noreferrer"
-                        aria-label="Instagram"
+                        aria-label="GitHub"
                         className={`inline-flex h-9 w-9 items-center justify-center rounded-full border transition ${isScrolled ? "border-slate-200/80 text-slate-700 hover:bg-slate-100" : "border-white/20 text-white hover:bg-white/10"}`}
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" className="h-5 w-5" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M4 8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0-6 0m7.5-4.5v.01"/></g></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" className="h-5 w-5" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21"/></svg>
                     </a>
 
                     <a
