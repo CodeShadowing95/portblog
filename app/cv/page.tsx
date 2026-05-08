@@ -23,7 +23,7 @@ function Card({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-2xl border border-white/20 bg-white/10 p-5 shadow-lg backdrop-blur-md">
+    <section className="rounded-2xl border border-white/20 bg-white/10 p-4 shadow-lg backdrop-blur-md sm:p-5">
       <header className="flex items-center gap-3">
         <div className="rounded-xl border border-white/20 bg-white/10 p-2">
           {icon}
@@ -57,7 +57,7 @@ function TimelineItem({
   bullets?: string[];
 }) {
   return (
-    <div className="grid gap-2 rounded-xl border border-white/15 bg-black/10 p-4">
+    <div className="grid gap-2 rounded-xl border border-white/15 bg-black/10 p-3 sm:p-4">
       <div className="text-xs font-semibold text-white/75">{period}</div>
       <div className="text-base font-semibold text-white">{title}</div>
       <div className="text-sm text-white/85">{subtitle}</div>
@@ -74,14 +74,14 @@ function TimelineItem({
 
 export default function CvPage() {
   return (
-    <main className="mx-auto mt-10 flex w-full max-w-6xl flex-1 flex-col gap-8">
-      <header className="flex flex-col gap-3">
+    <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 mt-10">
+      <header className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-3">
             <div className="rounded-xl border border-white/20 bg-white/10 p-2 backdrop-blur-md">
               <FileText className="h-5 w-5 text-white/90" />
             </div>
-            <h1 className="text-4xl font-semibold tracking-tight">
+            <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
               Patrick NAMEGNI
             </h1>
           </div>
