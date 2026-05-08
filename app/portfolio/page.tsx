@@ -157,7 +157,7 @@ function Modal({
         onClick={onClose}
         className="absolute inset-0 bg-black/60"
       />
-      <div className="relative mx-auto mt-30 w-[min(92vw,1100px)] overflow-hidden rounded-3xl border border-white/20 bg-[#0b0b10]/80 shadow-2xl backdrop-blur-md">
+      <div className="relative mx-auto mt-16 w-[min(92vw,1100px)] overflow-hidden rounded-3xl border border-white/20 bg-[#0b0b10]/80 shadow-2xl backdrop-blur-md sm:mt-20">
         <div className="grid gap-6 p-6 lg:grid-cols-[420px_1fr] lg:gap-8 lg:p-8">
           <div className="grid gap-4">
             <ProjectImage image={project.image} name={project.name} />
@@ -254,6 +254,7 @@ export default function PortfolioPage() {
   const [selectedReason, setSelectedReason] = useState<string[]>([]);
   const [sort, setSort] = useState<SortOption>("populaire");
   const [activeProjectId, setActiveProjectId] = useState<string | null>(null);
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   const allTags = useMemo(() => {
     const tags = new Set<string>();
@@ -392,9 +393,9 @@ export default function PortfolioPage() {
   }
 
   return (
-    <main className="mx-auto w-full max-w-6xl flex-1 mt-10">
+    <main className="mx-auto w-full max-w-6xl flex-1 mt-16">
       <header className="mb-8 grid gap-3">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <h1 className="text-5xl font-semibold tracking-tight sm:text-6xl">
               Projets Réalisés
@@ -406,7 +407,7 @@ export default function PortfolioPage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-3 sm:w-[420px]">
+          <div className="flex w-full flex-col gap-3 lg:w-[420px]">
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
@@ -414,7 +415,7 @@ export default function PortfolioPage() {
               placeholder="Rechercher un projet, une techno..."
             />
 
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <select
                 value={sort}
                 onChange={(e) => setSort(e.target.value as SortOption)}
@@ -425,23 +426,33 @@ export default function PortfolioPage() {
                 <option value="a-z">Tri : A → Z</option>
                 <option value="z-a">Tri : Z → A</option>
               </select>
-              {hasActiveFilters ? (
+              <div className="flex items-center gap-3">
                 <Button
                   type="button"
-                  variant="ghost"
-                  onClick={clearAll}
-                  className="h-11 rounded-2xl text-white/85 hover:bg-white/10 hover:text-white"
+                  variant="outline"
+                  onClick={() => setFiltersOpen((v) => !v)}
+                  className="h-11 flex-1 rounded-2xl border-white/25 bg-white/10 text-white hover:bg-white/15 hover:text-white lg:hidden"
                 >
-                  Reset
+                  {filtersOpen ? "Fermer filtres" : "Filtres"}
                 </Button>
-              ) : null}
+                {hasActiveFilters ? (
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    onClick={clearAll}
+                    className="h-11 flex-1 rounded-2xl text-white/85 hover:bg-white/10 hover:text-white"
+                  >
+                    Reset
+                  </Button>
+                ) : null}
+              </div>
             </div>
           </div>
         </div>
       </header>
 
       <section className="grid gap-8 lg:grid-cols-[320px_1fr] lg:items-start">
-        <aside className="grid gap-6">
+        <aside className={`${filtersOpen ? "grid" : "hidden"} gap-6 lg:grid`}>
           <div className="rounded-3xl border border-white/20 bg-white/10 p-5 shadow-lg backdrop-blur-md">
             <div className="flex justify-between items-center">
               <div className="text-sm font-semibold text-white/90">Collections</div>
@@ -452,7 +463,10 @@ export default function PortfolioPage() {
                 <ChipButton
                   key={t}
                   active={category === t}
-                  onClick={() => setCategory(t)}
+                  onClick={() => {
+                    setCategory(t);
+                    setFiltersOpen(false);
+                  }}
                 >
                   {t}{" "}
                   <span className="ml-1 text-white/60">
@@ -536,7 +550,7 @@ export default function PortfolioPage() {
             ) : null}
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-1 lg:grid-cols-2">
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2">
             {filteredProjects.map((p) => (
               <article
                 key={p.id}
