@@ -65,7 +65,7 @@ function Card({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-2xl border border-white/20 bg-white/10 p-5 shadow-lg backdrop-blur-md">
+    <section className="rounded-2xl border border-white/20 bg-white/10 p-4 shadow-lg backdrop-blur-md sm:p-5">
       <header className="grid gap-1">
         <h2 className="text-base font-semibold text-white/95">{title}</h2>
         {subtitle ? (
@@ -140,6 +140,33 @@ function SocialBubble({
   );
 }
 
+function SocialTile({
+  href,
+  label,
+  type,
+}: {
+  href: string;
+  label: string;
+  type: "linkedin" | "github" | "facebook" | "website";
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="flex items-center gap-3 rounded-2xl border border-white/20 bg-white/10 px-4 py-3 shadow-lg backdrop-blur-md transition hover:bg-white/15"
+    >
+      <span className="grid h-10 w-10 place-items-center rounded-xl bg-black/10 text-white">
+        <SocialIcon type={type} />
+      </span>
+      <div className="min-w-0">
+        <div className="truncate text-sm font-semibold text-white">{label}</div>
+        <div className="text-xs text-white/70">Ouvrir</div>
+      </div>
+    </a>
+  );
+}
+
 export default function ContactPage() {
   const [services, setServices] = useState<string[]>([]);
   const [budget, setBudget] = useState<BudgetOption | "">("");
@@ -197,10 +224,10 @@ export default function ContactPage() {
 
   return (
     <main className="mx-auto w-full max-w-6xl flex-1 pb-8 mt-10">
-      <section className="grid gap-8 lg:grid-cols-[1fr_520px] lg:items-start">
-        <div className="fixed right-10 rounded-3xl border border-white/20 bg-white/10 p-6 shadow-lg backdrop-blur-md sm:p-8">
+      <section className="grid gap-6 lg:grid-cols-[1fr_520px] lg:items-start lg:gap-8">
+        <div className="rounded-3xl border border-white/20 bg-white/10 p-5 shadow-lg backdrop-blur-md sm:p-8 lg:sticky lg:top-28">
           <header className="mb-8">
-            <h1 className="text-balance text-5xl font-semibold tracking-tight uppercase sm:text-6xl">
+            <h1 className="text-balance text-4xl font-semibold tracking-tight uppercase sm:text-6xl">
               Parlons-en
             </h1>
           </header>
@@ -213,7 +240,30 @@ export default function ContactPage() {
           </p>
 
           <div className="mt-8">
-            <div className="relative mt-4 h-[210px] w-full overflow-hidden rounded-2xl border border-white/15 bg-black/10">
+            <div className="grid gap-3 sm:hidden">
+              <SocialTile
+                type="linkedin"
+                label="LinkedIn"
+                href="https://www.linkedin.com/in/frank-patrick-namegni/"
+              />
+              <SocialTile
+                type="github"
+                label="GitHub"
+                href="https://github.com/CodeShadowing95/"
+              />
+              <SocialTile
+                type="facebook"
+                label="Facebook"
+                href="https://facebook.com/"
+              />
+              <SocialTile
+                type="website"
+                label="Site web"
+                href="https://patricknamegni.vercel.app/"
+              />
+            </div>
+
+            <div className="relative mt-4 hidden h-[240px] w-full max-w-[520px] overflow-hidden rounded-2xl border border-white/15 bg-black/10 sm:block">
               <svg
                 aria-hidden="true"
                 className="absolute inset-0 h-full w-full opacity-40"
@@ -248,25 +298,25 @@ export default function ContactPage() {
                 type="linkedin"
                 label="LinkedIn"
                 href="https://www.linkedin.com/in/frank-patrick-namegni/"
-                className="left-4 top-6 bg-linear-to-br from-[#0A66C2]/25 to-white/10"
+                className="left-4 top-6 w-[140px] bg-linear-to-br from-[#0A66C2]/25 to-white/10 md:w-[148px]"
               />
               <SocialBubble
                 type="github"
                 label="GitHub"
                 href="https://github.com/CodeShadowing95/"
-                className="right-6 top-8 w-[148px] bg-linear-to-br from-[#F58529]/20 via-[#DD2A7B]/15 to-[#515BD4]/20"
+                className="right-4 top-8 w-[140px] bg-linear-to-br from-[#F58529]/20 via-[#DD2A7B]/15 to-[#515BD4]/20 md:right-6 md:w-[148px]"
               />
               <SocialBubble
                 type="facebook"
                 label="Facebook"
                 href="https://facebook.com/"
-                className="bottom-6 left-20 w-[148px] bg-linear-to-br from-[#1877F2]/25 to-white/10"
+                className="bottom-6 left-10 w-[140px] bg-linear-to-br from-[#1877F2]/25 to-white/10 md:left-20 md:w-[148px]"
               />
               <SocialBubble
                 type="website"
                 label="Site web"
                 href="https://patricknamegni.vercel.app/"
-                className="bottom-4 right-16 w-[148px] bg-linear-to-br from-emerald-400/20 via-cyan-400/10 to-white/10"
+                className="bottom-4 right-6 w-[140px] bg-linear-to-br from-emerald-400/20 via-cyan-400/10 to-white/10 md:right-16 md:w-[148px]"
               />
             </div>
           </div>
