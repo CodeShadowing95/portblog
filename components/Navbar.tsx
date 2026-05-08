@@ -21,7 +21,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className={`fixed left-1/2 top-6 z-[100] w-[min(92vw,920px)] -translate-x-1/2 rounded-2xl border border-white/20 px-4 py-3 shadow-lg backdrop-blur-md transition-colors duration-300 ${isScrolled ? "bg-[#fdfdfe]/50" : " bg-white/10"}`}>
+        <nav className={`fixed left-1/2 top-6 z-100 w-[min(92vw,920px)] -translate-x-1/2 rounded-2xl border border-white/20 px-4 py-3 shadow-lg backdrop-blur-md transition-colors duration-300 ${isScrolled ? "bg-[#fdfdfe]/50" : " bg-white/10"}`}>
             <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
                 <Link
                     href="/"

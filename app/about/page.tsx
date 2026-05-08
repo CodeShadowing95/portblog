@@ -74,7 +74,7 @@ const TECH_ORNAMENTS = [
     opacity: 0.16,
   },
   {
-    src: "/images/technos/docker2.png",
+    src: "/images/technos/docker.png",
     alt: "Docker",
     bottom: "48%",
     left: "10%",
