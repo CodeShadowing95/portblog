@@ -67,7 +67,7 @@ export default function RootLayout({
 
         <Navbar />
 
-        <div className="flex flex-1 flex-col px-6 pb-10 pt-28 z-10 text-white">
+        <div className="z-10 flex flex-1 flex-col px-4 pb-8 pt-24 text-white sm:px-6 sm:pb-10 sm:pt-28 lg:px-10">
           {children}
         </div>
 

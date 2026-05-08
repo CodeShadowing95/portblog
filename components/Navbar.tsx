@@ -12,10 +12,6 @@ const GitHubIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" className="h-5 w-5" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21"/></svg>
 )
 
-const FacebookIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" className="h-5 w-5" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2z"/></svg>
-)
-
 type NavAttrs = {
     label: string
     href: string
@@ -84,6 +80,7 @@ const NavItem = ({ attrs, className }: NavProps) => {
 const Navbar = () => {
 
     const [isScrolled, setIsScrolled] = useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -91,6 +88,7 @@ const Navbar = () => {
         };
 
         window.addEventListener("scroll", handleScroll);
+        handleScroll();
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
@@ -98,8 +96,8 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className={`fixed left-1/2 top-6 z-100 w-[min(94vw,1200px)] -translate-x-1/2 rounded-2xl px-4 py-3 transition-colors duration-300 ${isScrolled ? "bg-[#D9D9D9]" : ""}`}>
-            <div className="flex items-center justify-between gap-6">
+        <nav className={`fixed left-1/2 top-6 z-[100] w-[min(94vw,1200px)] -translate-x-1/2 rounded-2xl border border-white/20 bg-white/10 px-4 py-3 shadow-lg backdrop-blur-md transition-colors duration-300 ${isScrolled ? "bg-[#D9D9D9]/70" : ""}`}>
+            <div className="flex items-center justify-between gap-4">
                 <Link
                     href="/"
                     className={`flex items-center gap-3 font-semibold tracking-wide ${isScrolled ? "text-slate-700" : " text-white"}`}
@@ -115,14 +113,14 @@ const Navbar = () => {
                     {/* <span className="text-base sm:text-lg">Portfolio</span> */}
                 </Link>
 
-                <div className="flex flex-1 items-center justify-end gap-14">
-                    <div className={`flex flex-wrap items-center justify-end gap-x-7 gap-y-2 text-sm font-medium ${isScrolled ? "text-slate-700/90" : "text-white/90"}`}>
+                <div className="flex items-center gap-3">
+                    <div className={`hidden flex-wrap items-center justify-end gap-x-7 gap-y-2 text-sm font-medium md:flex ${isScrolled ? "text-slate-700/90" : "text-white/90"}`}>
                         {navLinks.map((link) => (
                             <NavItem key={link.href} attrs={link} className={`transition ${isScrolled ? "hover:text-slate-700/50" : "hover:text-white/60"}`} />
                         ))}
                     </div>
 
-                    <div className="flex items-center gap-2">
+                    <div className="hidden items-center gap-2 md:flex">
                         {navSocials.map((social) => (
                             <a
                                 key={social.href}
@@ -136,8 +134,79 @@ const Navbar = () => {
                             </a>
                         ))}
                     </div>
+
+                    <button
+                        type="button"
+                        aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+                        aria-expanded={mobileOpen}
+                        aria-controls="mobile-nav"
+                        onClick={() => setMobileOpen((v) => !v)}
+                        className={`inline-flex h-10 w-10 items-center justify-center rounded-xl border transition md:hidden ${isScrolled ? "border-slate-300/60 text-slate-700 hover:bg-slate-100" : "border-white/20 text-white hover:bg-white/10"}`}
+                    >
+                        <svg
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            className="h-5 w-5"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        >
+                            {mobileOpen ? (
+                                <>
+                                    <path d="M18 6L6 18" />
+                                    <path d="M6 6l12 12" />
+                                </>
+                            ) : (
+                                <>
+                                    <path d="M4 6h16" />
+                                    <path d="M4 12h16" />
+                                    <path d="M4 18h16" />
+                                </>
+                            )}
+                        </svg>
+                    </button>
                 </div>
             </div>
+
+            {mobileOpen ? (
+                <div
+                    id="mobile-nav"
+                    className={`mt-3 grid gap-3 rounded-2xl border px-3 py-3 md:hidden ${isScrolled ? "border-slate-200/60 bg-[#fdfdfe]/70" : "border-white/20 bg-white/10"}`}
+                >
+                    <div className="grid gap-1">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                onClick={() => setMobileOpen(false)}
+                                className={`rounded-xl px-3 py-2 text-sm font-semibold transition ${isScrolled ? "text-slate-700 hover:bg-slate-100" : "text-white hover:bg-white/10"}`}
+                            >
+                                {link.label}
+                            </Link>
+                        ))}
+                    </div>
+
+                    <div className="h-px bg-white/15" />
+
+                    <div className="flex items-center gap-2">
+                        {navSocials.map((social) => (
+                            <a
+                                key={social.href}
+                                href={social.href}
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label={social.label}
+                                className={`inline-flex h-10 w-10 items-center justify-center rounded-xl border transition ${isScrolled ? "border-slate-200/60 text-slate-700 hover:bg-slate-100" : "border-white/20 text-white hover:bg-white/10"}`}
+                            >
+                                {social.icon}
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            ) : null}
         </nav>
     );
 };
