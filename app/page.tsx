@@ -1,6 +1,15 @@
 import { Square } from "lucide-react";
 
 const Home = () => {
+  const qualities = [
+    "Curiosité naturelle",
+    "Autonomie flexible",
+    "Rigueur constante",
+    "Esprit d’équipe",
+    "Créativité active",
+    "Solution orientée",
+  ];
+
   return (
     <main className="flex flex-1 flex-col">
       <div className="flex flex-1 items-center">
@@ -39,14 +48,18 @@ const Home = () => {
       </div>
 
       <footer className="mx-auto mt-auto w-full max-w-6xl">
-        <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium text-white/85">
-          <li>Curiosité naturelle</li>
-          <li>Autonomie flexible</li>
-          <li>Rigueur constante</li>
-          <li>Esprit d’équipe</li>
-          <li>Créativité active</li>
-          <li>Solution orientée</li>
-        </ul>
+        <div className="flex flex-wrap items-center justify-center gap-y-2 text-sm font-medium text-white/85">
+          {qualities.map((q, idx) => (
+            <span key={q} className="inline-flex items-center">
+              <span>{q}</span>
+              {idx < qualities.length - 1 ? (
+                <span className="px-4 text-white/55" aria-hidden="true">
+                  ·
+                </span>
+              ) : null}
+            </span>
+          ))}
+        </div>
       </footer>
     </main>
   );

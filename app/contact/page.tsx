@@ -213,7 +213,7 @@ export default function ContactPage() {
           </p>
 
           <div className="mt-8">
-            <div className="relative mt-4 h-[210px] w-full max-w-[520px] overflow-hidden rounded-2xl border border-white/15 bg-black/10">
+            <div className="relative mt-4 h-[210px] w-full overflow-hidden rounded-2xl border border-white/15 bg-black/10">
               <svg
                 aria-hidden="true"
                 className="absolute inset-0 h-full w-full opacity-40"
