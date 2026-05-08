@@ -1,0 +1,287 @@
+[
+  {
+    "title": "Construire une interface React pilotée par l’IA sans sacrifier la maintenabilité",
+    "slug": "react-ia-interface-maintenable",
+    "date": "2024-02-14",
+    "format": "tutoriel",
+    "expertise_level": "intermédiaire",
+    "excerpt": "Dans ce tutoriel, je montre comment intégrer un assistant IA dans une application React sans transformer le front-end en prototype fragile. L’article détaille une architecture simple avec hooks dédiés, composants contrôlés, gestion des états asynchrones et séparation claire entre logique métier et appels API. On y voit comment gérer les erreurs, les messages streaming, les limites de contexte et les états de chargement. L’objectif est de produire une expérience fluide pour l’utilisateur tout en gardant un code lisible, testable et prêt à évoluer vers des fonctionnalités plus avancées comme la personnalisation ou l’historique conversationnel.",
+    "tags": [
+      "React",
+      "JavaScript",
+      "AI",
+      "Frontend",
+      "UX"
+    ],
+    "cover_image": "https://placehold.co/1200x630/111827/ffffff?text=React+AI+Interface",
+    "reading_time_minutes": 6,
+    "likes": 184,
+    "comments": 23
+  },
+  {
+    "title": "Ce que j’ai appris en migrant une API Node.js vers AWS Lambda",
+    "slug": "migration-api-nodejs-aws-lambda",
+    "date": "2024-04-03",
+    "format": "expérience",
+    "expertise_level": "intermédiaire",
+    "excerpt": "Cette étude de cas revient sur la migration d’une API Node.js classique vers une architecture serverless sur AWS Lambda. Je partage les choix techniques, les erreurs de configuration, les gains obtenus et les limites rencontrées en production. L’article couvre la gestion des cold starts, le découpage des routes, l’usage d’API Gateway, la supervision avec CloudWatch et les impacts sur les coûts. Plutôt qu’un récit parfait, c’est un retour terrain honnête sur les compromis entre simplicité opérationnelle, performance et observabilité lorsqu’une équipe cherche à moderniser une API sans réécrire toute sa base de code.",
+    "tags": [
+      "Node.js",
+      "AWS",
+      "Serverless",
+      "DevOps",
+      "API"
+    ],
+    "cover_image": "https://placehold.co/1200x630/0f172a/ffffff?text=Node.js+AWS+Lambda",
+    "reading_time_minutes": 7,
+    "likes": 271,
+    "comments": 31
+  },
+  {
+    "title": "Pourquoi les développeurs web doivent comprendre les pipelines CI/CD",
+    "slug": "developpeurs-web-pipelines-cicd",
+    "date": "2024-05-21",
+    "format": "opinion",
+    "expertise_level": "débutant",
+    "excerpt": "Le CI/CD n’est plus un sujet réservé aux ingénieurs DevOps. Pour un développeur web, comprendre comment le code passe d’une pull request à la production change la manière de concevoir, tester et livrer les fonctionnalités. Dans cet article d’opinion, j’explique pourquoi les pipelines automatisés réduisent les régressions, accélèrent les retours et favorisent une meilleure collaboration entre front-end, back-end et infrastructure. J’aborde aussi les erreurs fréquentes, comme des tests trop lents, des secrets mal protégés ou des déploiements impossibles à reproduire. L’idée est simple : livrer mieux commence avant le bouton deploy.",
+    "tags": [
+      "DevOps",
+      "CI/CD",
+      "JavaScript",
+      "Testing",
+      "Automation"
+    ],
+    "cover_image": "https://placehold.co/1200x630/1e293b/ffffff?text=CI%2FCD+for+Web+Devs",
+    "reading_time_minutes": 4,
+    "likes": 143,
+    "comments": 17
+  },
+  {
+    "title": "Créer un moteur de recommandations simple avec Python et FastAPI",
+    "slug": "moteur-recommandations-python-fastapi",
+    "date": "2024-07-09",
+    "format": "tutoriel",
+    "expertise_level": "intermédiaire",
+    "excerpt": "Ce tutoriel présente la création d’un moteur de recommandations léger avec Python et FastAPI, pensé pour un site de contenu ou un portfolio interactif. On part d’un jeu de données simple, puis on calcule des scores basés sur les tags, les catégories et les interactions utilisateur. L’article explique comment exposer ces recommandations via une API claire, limiter les calculs inutiles et préparer le terrain pour des modèles plus avancés. L’approche reste volontairement pragmatique : pas besoin d’un énorme pipeline machine learning pour améliorer la découverte de contenu et proposer une expérience plus personnalisée aux visiteurs.",
+    "tags": [
+      "Python",
+      "FastAPI",
+      "AI",
+      "API",
+      "Backend"
+    ],
+    "cover_image": "https://placehold.co/1200x630/312e81/ffffff?text=Python+Recommendations",
+    "reading_time_minutes": 6,
+    "likes": 229,
+    "comments": 28
+  },
+  {
+    "title": "Architecture hexagonale : utile ou excessive pour une application web ?",
+    "slug": "architecture-hexagonale-application-web",
+    "date": "2024-09-18",
+    "format": "opinion",
+    "expertise_level": "avancé",
+    "excerpt": "L’architecture hexagonale promet un code plus découplé, testable et indépendant des frameworks, mais elle peut aussi ajouter une complexité inutile si elle est appliquée sans discernement. Dans cet article, j’analyse son intérêt pour les applications web modernes, notamment avec React, Node.js et des services cloud. Je compare les bénéfices concrets, comme l’isolation du domaine et la facilité des tests, aux coûts réels, comme la multiplication des interfaces et la courbe d’apprentissage. Le but n’est pas de défendre un dogme, mais d’aider à choisir une structure adaptée à la taille du produit et de l’équipe.",
+    "tags": [
+      "Architecture",
+      "Node.js",
+      "React",
+      "Clean Code",
+      "System Design"
+    ],
+    "cover_image": "https://placehold.co/1200x630/3f3f46/ffffff?text=Hexagonal+Architecture",
+    "reading_time_minutes": 5,
+    "likes": 198,
+    "comments": 36
+  },
+  {
+    "title": "Mettre en place une observabilité efficace sur une stack Node.js",
+    "slug": "observabilite-stack-nodejs",
+    "date": "2024-11-06",
+    "format": "tutoriel",
+    "expertise_level": "avancé",
+    "excerpt": "Une application Node.js en production ne se résume pas à des logs dans la console. Ce tutoriel montre comment construire une base d’observabilité solide avec logs structurés, métriques applicatives, traces distribuées et alertes actionnables. J’explique comment choisir les bons signaux, éviter le bruit, instrumenter les routes critiques et relier les erreurs aux déploiements récents. L’article s’adresse aux développeurs qui veulent mieux comprendre ce qui se passe après la mise en ligne. L’objectif est de détecter plus vite les incidents, diagnostiquer plus précisément et améliorer la fiabilité sans complexifier inutilement l’infrastructure.",
+    "tags": [
+      "Node.js",
+      "DevOps",
+      "Observability",
+      "AWS",
+      "Monitoring"
+    ],
+    "cover_image": "https://placehold.co/1200x630/164e63/ffffff?text=Node.js+Observability",
+    "reading_time_minutes": 8,
+    "likes": 312,
+    "comments": 44
+  },
+  {
+    "title": "Comment j’ai optimisé le temps de chargement d’un portfolio React",
+    "slug": "optimisation-performance-portfolio-react",
+    "date": "2025-01-12",
+    "format": "expérience",
+    "expertise_level": "débutant",
+    "excerpt": "Dans cette étude de cas, je détaille l’optimisation progressive d’un portfolio React devenu trop lent après l’ajout d’animations, d’images haute résolution et de composants dynamiques. L’article passe en revue l’audit Lighthouse, le lazy loading, la compression d’images, le découpage du bundle et la réduction du JavaScript inutile. Je montre aussi comment prioriser les corrections qui ont le plus d’impact sur l’expérience réelle, plutôt que de courir après un score parfait. Le résultat est une page plus rapide, plus fluide et plus agréable à consulter, sans perdre l’identité visuelle du projet.",
+    "tags": [
+      "React",
+      "JavaScript",
+      "Performance",
+      "Frontend",
+      "UX"
+    ],
+    "cover_image": "https://placehold.co/1200x630/065f46/ffffff?text=React+Performance",
+    "reading_time_minutes": 5,
+    "likes": 256,
+    "comments": 19
+  },
+  {
+    "title": "Déployer une application full-stack avec Docker, GitHub Actions et AWS",
+    "slug": "deployer-fullstack-docker-github-actions-aws",
+    "date": "2025-03-27",
+    "format": "tutoriel",
+    "expertise_level": "intermédiaire",
+    "excerpt": "Ce guide explique comment automatiser le déploiement d’une application full-stack avec Docker, GitHub Actions et AWS. On configure une image reproductible, un workflow de test, une étape de build et un déploiement vers une infrastructure cloud. L’article insiste sur les détails qui font la différence en production : variables d’environnement, secrets, health checks, rollback et séparation entre staging et production. L’objectif est de créer une chaîne simple mais fiable, adaptée à un portfolio professionnel ou à un petit SaaS. Chaque étape est pensée pour être compréhensible, maintenable et améliorable avec le temps.",
+    "tags": [
+      "DevOps",
+      "Docker",
+      "AWS",
+      "Node.js",
+      "CI/CD"
+    ],
+    "cover_image": "https://placehold.co/1200x630/7c2d12/ffffff?text=Docker+AWS+Deploy",
+    "reading_time_minutes": 8,
+    "likes": 389,
+    "comments": 52
+  },
+  {
+    "title": "Utiliser l’IA pour générer des tests sans perdre le contrôle du code",
+    "slug": "ia-generation-tests-controle-code",
+    "date": "2025-05-08",
+    "format": "opinion",
+    "expertise_level": "intermédiaire",
+    "excerpt": "Les outils d’IA peuvent accélérer l’écriture des tests, mais ils ne remplacent pas la compréhension du comportement attendu. Dans cet article, j’explique comment utiliser l’IA comme assistant de test plutôt que comme générateur automatique non vérifié. Je présente une méthode basée sur des scénarios clairs, des exemples métier, des assertions lisibles et une revue systématique des cas limites. L’article aborde aussi les risques : faux sentiment de sécurité, tests trop couplés à l’implémentation et couverture trompeuse. Bien utilisée, l’IA peut améliorer la qualité, mais seulement si le développeur reste responsable du design des tests.",
+    "tags": [
+      "AI",
+      "Testing",
+      "JavaScript",
+      "Python",
+      "Quality"
+    ],
+    "cover_image": "https://placehold.co/1200x630/581c87/ffffff?text=AI+Generated+Tests",
+    "reading_time_minutes": 4,
+    "likes": 167,
+    "comments": 26
+  },
+  {
+    "title": "Concevoir une API publique robuste : versioning, quotas et documentation",
+    "slug": "api-publique-versioning-quotas-documentation",
+    "date": "2025-07-19",
+    "format": "tutoriel",
+    "expertise_level": "avancé",
+    "excerpt": "Créer une API publique implique bien plus que retourner du JSON. Ce tutoriel explore les fondations d’une API robuste : versioning prévisible, quotas explicites, pagination cohérente, erreurs utiles et documentation exploitable. J’utilise des exemples en Node.js pour montrer comment structurer les endpoints, protéger les ressources et préparer les évolutions sans casser les intégrations existantes. L’article aborde aussi les choix de design qui améliorent l’expérience développeur, comme des messages d’erreur lisibles et des exemples de requêtes réalistes. Une bonne API est autant un produit qu’un morceau d’architecture technique.",
+    "tags": [
+      "Node.js",
+      "API",
+      "Architecture",
+      "JavaScript",
+      "DX"
+    ],
+    "cover_image": "https://placehold.co/1200x630/1d4ed8/ffffff?text=Robust+Public+API",
+    "reading_time_minutes": 7,
+    "likes": 295,
+    "comments": 41
+  },
+  {
+    "title": "Retour d’expérience : refactorer un monolithe vers des services modulaires",
+    "slug": "refactor-monolithe-services-modulaires",
+    "date": "2025-09-02",
+    "format": "expérience",
+    "expertise_level": "avancé",
+    "excerpt": "Cette étude de cas raconte le refactoring progressif d’un monolithe web vers une architecture plus modulaire, sans basculer trop vite vers des microservices complexes. Je décris les critères utilisés pour identifier les frontières fonctionnelles, les erreurs évitées, les contrats d’API introduits et les bénéfices obtenus sur les tests et les déploiements. L’article insiste sur une approche incrémentale : extraire ce qui change souvent, stabiliser les interfaces et mesurer l’impact avant d’aller plus loin. Le message principal est simple : une architecture distribuée doit résoudre un problème réel, pas seulement suivre une tendance technique.",
+    "tags": [
+      "Architecture",
+      "System Design",
+      "Node.js",
+      "DevOps",
+      "API"
+    ],
+    "cover_image": "https://placehold.co/1200x630/78350f/ffffff?text=Modular+Services",
+    "reading_time_minutes": 8,
+    "likes": 421,
+    "comments": 63
+  },
+  {
+    "title": "Créer un dashboard DevOps en React avec métriques temps réel",
+    "slug": "dashboard-devops-react-metriques-temps-reel",
+    "date": "2025-10-24",
+    "format": "tutoriel",
+    "expertise_level": "intermédiaire",
+    "excerpt": "Dans ce tutoriel, on construit un dashboard DevOps en React capable d’afficher des métriques applicatives en quasi temps réel. L’article couvre la structure des composants, la récupération périodique des données, la visualisation des indicateurs clés et la gestion des états d’erreur. Je montre comment présenter les données de manière utile pour une équipe technique : latence, taux d’erreur, disponibilité et derniers déploiements. L’objectif n’est pas de remplacer un outil d’observabilité complet, mais de créer une interface claire pour un portfolio ou un projet interne, démontrant des compétences front-end, produit et infrastructure.",
+    "tags": [
+      "React",
+      "DevOps",
+      "JavaScript",
+      "Monitoring",
+      "UX"
+    ],
+    "cover_image": "https://placehold.co/1200x630/155e75/ffffff?text=DevOps+Dashboard",
+    "reading_time_minutes": 6,
+    "likes": 238,
+    "comments": 34
+  },
+  {
+    "title": "AWS pour développeurs front-end : comprendre l’essentiel sans se perdre",
+    "slug": "aws-developpeurs-frontend-essentiel",
+    "date": "2026-01-15",
+    "format": "guide",
+    "expertise_level": "débutant",
+    "excerpt": "AWS peut sembler intimidant pour un développeur front-end habitué à travailler principalement avec React et JavaScript. Ce guide présente les services essentiels à connaître sans entrer dans une complexité inutile : hébergement statique, CDN, fonctions serverless, stockage, permissions et surveillance. L’article explique comment ces briques s’assemblent pour déployer un portfolio, une landing page ou une petite application dynamique. L’objectif est de donner des repères concrets pour dialoguer avec les équipes DevOps, prendre de meilleures décisions techniques et comprendre ce qui se passe entre le build local et l’application accessible en ligne.",
+    "tags": [
+      "AWS",
+      "Frontend",
+      "React",
+      "JavaScript",
+      "DevOps"
+    ],
+    "cover_image": "https://placehold.co/1200x630/0f766e/ffffff?text=AWS+for+Frontend",
+    "reading_time_minutes": 5,
+    "likes": 176,
+    "comments": 22
+  },
+  {
+    "title": "Quand choisir Python plutôt que Node.js pour un backend web ?",
+    "slug": "python-vs-nodejs-backend-web",
+    "date": "2026-03-04",
+    "format": "opinion",
+    "expertise_level": "intermédiaire",
+    "excerpt": "Python et Node.js peuvent tous deux servir de base solide pour un backend web, mais ils excellent dans des contextes différents. Dans cet article, je compare les deux approches à travers la productivité, l’écosystème, la performance, les traitements asynchrones, l’intégration IA et la facilité de recrutement. Plutôt que d’établir un vainqueur universel, j’explique comment choisir selon le produit : API temps réel, back-office data, automatisation, prototype IA ou plateforme full-stack JavaScript. Le meilleur choix dépend rarement d’un benchmark isolé. Il dépend surtout de l’équipe, du domaine métier et de l’évolution attendue du projet.",
+    "tags": [
+      "Python",
+      "Node.js",
+      "Backend",
+      "Architecture",
+      "AI"
+    ],
+    "cover_image": "https://placehold.co/1200x630/334155/ffffff?text=Python+vs+Node.js",
+    "reading_time_minutes": 5,
+    "likes": 204,
+    "comments": 39
+  },
+  {
+    "title": "Design system minimal pour portfolio développeur : composants, tokens et thèmes",
+    "slug": "design-system-minimal-portfolio-developpeur",
+    "date": "2026-04-22",
+    "format": "tutoriel",
+    "expertise_level": "débutant",
+    "excerpt": "Un portfolio développeur gagne beaucoup en cohérence lorsqu’il repose sur un design system minimal. Dans ce tutoriel, je montre comment définir des tokens de couleur, de typographie, d’espacement et de rayon, puis les utiliser dans des composants React simples. L’objectif n’est pas de créer une bibliothèque massive, mais d’obtenir une base visuelle stable pour les pages projets, blog et contact. L’article explique aussi comment préparer un thème sombre, documenter les décisions et garder les composants faciles à modifier. Une structure légère suffit souvent à donner une impression plus professionnelle et à accélérer les futures itérations.",
+    "tags": [
+      "React",
+      "JavaScript",
+      "Frontend",
+      "Design System",
+      "UX"
+    ],
+    "cover_image": "https://placehold.co/1200x630/4c1d95/ffffff?text=Developer+Design+System",
+    "reading_time_minutes": 6,
+    "likes": 151,
+    "comments": 18
+  }
+]

@@ -47,8 +47,11 @@ const Navbar = () => {
                     <Link href="/cv" className="transition hover:text-white">
                         CV
                     </Link>
+                    <Link href="/services" className="transition hover:text-white">
+                        Services
+                    </Link>
                     <Link href="/portfolio" className="transition hover:text-white">
-                        Réalisations
+                        Projets
                     </Link>
                     <Link href="/blog" className="transition hover:text-white">
                         Blog

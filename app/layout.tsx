@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -52,7 +53,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+   return (
     <html
       lang="en"
       className={cn("h-full", "antialiased", montserrat.variable, "font-sans")}
@@ -62,13 +63,15 @@ export default function RootLayout({
           className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url(/images/banner.png)" }}
         />
-        <div className="fixed inset-0 -z-10 bg-black/30" />
+        <div className="fixed inset-0 -z-10 bg-black/40" />
 
         <Navbar />
 
         <div className="flex flex-1 flex-col px-6 pb-10 pt-28 z-10 text-white">
           {children}
         </div>
+
+        <ScrollToTop />
       </body>
     </html>
   );

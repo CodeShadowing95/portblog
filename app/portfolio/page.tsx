@@ -591,7 +591,7 @@ export default function PortfolioPage() {
                       className="h-10 rounded-2xl border-white/25 bg-white/10 text-white hover:bg-white/15 hover:text-white"
                     >
                       <a href={p.app_link} target="_blank" rel="noreferrer">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" className="h-5 w-5" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m12-3l-6 6"/><path d="M15 15V9H9"/></g></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" className="h-5 w-5" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0m12-3l-6 6"/><path d="M15 15V9H9"/></g></svg>
                         Demo
                       </a>
                     </Button>

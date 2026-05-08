@@ -8,8 +8,8 @@ type BudgetOption =
   | "- 5K"
   | "5K - 1K"
   | "1K - 25K"
-  | "25K - 5K"
-  | "+ 5K";
+  | "25K - 50K"
+  | "+ 50K";
 
 const SERVICES = [
   "Apps Web",
@@ -29,8 +29,8 @@ const BUDGETS: BudgetOption[] = [
   "- 5K",
   "5K - 1K",
   "1K - 25K",
-  "25K - 5K",
-  "+ 5K",
+  "25K - 50K",
+  "+ 50K",
 ];
 
 function Field({
