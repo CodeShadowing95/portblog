@@ -105,6 +105,8 @@ function TechOrnament({
   src,
   alt,
   top,
+  right,
+  bottom,
   left,
   size,
   rotate,
@@ -113,6 +115,8 @@ function TechOrnament({
   src: string;
   alt: string;
   top?: string;
+  right?: string;
+  bottom?: string;
   left?: string;
   size?: number;
   rotate?: number;
@@ -124,9 +128,11 @@ function TechOrnament({
       alt={alt}
       width={size}
       height={size}
-      className="absolute hidden select-none sm:block"
+      className="absolute hidden select-none lg:block"
       style={{
         top,
+        right,
+        bottom,
         left,
         opacity,
         transform: `rotate(${rotate}deg)`,
@@ -141,54 +147,86 @@ function TechOrnament({
 
 const About = () => {
   return (
-    <main className="mx-auto flex w-full mt-10 max-w-6xl flex-1 flex-col items-center justify-center gap-10">
-      <section className="w-full rounded-3xl border border-white/20 bg-white/10 p-6 shadow-lg backdrop-blur-md sm:p-8">
-        <div className="grid gap-8 md:grid-cols-[260px_1fr] md:items-center">
-          <div className="mx-auto w-full max-w-[260px]">
-            <div className="relative aspect-square overflow-hidden rounded-3xl border border-white/20 bg-white/10">
-              <Image
-                src="/images/profile.jpg"
-                alt="Photo de profil"
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 1200px"
-              />
+    <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 mt-16 sm:gap-10">
+      <section className="relative w-full overflow-hidden rounded-3xl border border-white/20 bg-white/10 p-5 shadow-lg backdrop-blur-md sm:p-8">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+          <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-cyan-500/25 blur-3xl" />
+          <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-indigo-500/20 blur-3xl" />
+          <div className="absolute left-1/2 top-8 h-40 w-[520px] -translate-x-1/2 rounded-full bg-white/10 blur-3xl" />
+        </div>
+
+        <div className="relative grid gap-8 md:grid-cols-[260px_1fr] md:items-center lg:grid-cols-[320px_1fr]">
+          <div className="mx-auto w-full max-w-[240px] sm:max-w-[280px]">
+            <div className="relative">
+              <div className="absolute -inset-2 rounded-[2.25rem] bg-linear-to-br from-white/25 via-white/5 to-transparent blur-md" />
+              <div className="relative aspect-square overflow-hidden rounded-3xl border border-white/20 bg-black/10">
+                <Image
+                  src="/images/profile.jpg"
+                  alt="Photo de profil"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="(max-width: 768px) 240px, 320px"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-black/45 via-black/5 to-transparent" />
+              </div>
             </div>
           </div>
 
-          <div>
-            <h1 className="text-5xl font-semibold tracking-tight sm:text-6xl">
-              Bonjour/Bonsoir 👋
+          <div className="text-center md:text-left">
+            <div className="flex flex-wrap items-center justify-center gap-2 md:justify-start">
+              <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold text-white/85">
+                Fullstack
+              </span>
+              <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold text-white/85">
+                Automatisation
+              </span>
+              <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold text-white/85">
+                IA
+              </span>
+            </div>
+
+            <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-6xl">
+              Bonjour/Bonsoir{" "}
+              <span className="bg-linear-to-r from-white via-white to-white/70 bg-clip-text text-transparent">
+                👋
+              </span>
             </h1>
-            <p className="mt-5 max-w-3xl text-pretty text-white/85">
-              Je m’appelle Patrick NAMEGNI, développeur Fullstack orienté
-              automatisation & IA.
-              <br />
-              Je conçois des interfaces modernes (React/Next.js) et des APIs
-              robustes (Node.js, Java, PHP, Python).
-              <br />
-              J’aime transformer des besoins métiers en solutions concrètes,
-              maintenables et performantes.
-              <br />
-              Je combine rigueur, autonomie et esprit d’équipe pour livrer vite
-              et bien.
-              <br />
-              Aujourd’hui, je recherche une alternance de 2 ans pour contribuer
-              à des projets innovants.
-            </p>
+
+            <div className="mt-5 grid max-w-3xl gap-3 text-pretty text-white/85">
+              <p>
+                Je m’appelle Patrick NAMEGNI, développeur Fullstack orienté
+                automatisation & IA.
+              </p>
+              <p>
+                Je conçois des interfaces modernes (React/Next.js) et des APIs
+                robustes (Node.js, Java, PHP, Python).
+              </p>
+              <p>
+                J’aime transformer des besoins métiers en solutions concrètes,
+                maintenables et performantes.
+              </p>
+              <p>
+                Je combine rigueur, autonomie et esprit d’équipe pour livrer
+                vite et bien.
+              </p>
+              <p>
+                Aujourd’hui, je recherche une alternance de 2 ans pour
+                contribuer à des projets innovants.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="relative w-full overflow-hidden rounded-3xl border border-white/20 bg-white/10 p-6 shadow-lg backdrop-blur-md sm:p-8">
+      <section className="relative w-full overflow-hidden rounded-3xl border border-white/20 bg-white/10 p-5 shadow-lg backdrop-blur-md sm:p-8">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
           {TECH_ORNAMENTS.map((t) => (
             <TechOrnament key={t.src} {...t} />
           ))}
         </div>
 
-        <div className="relative z-10 grid gap-10 lg:grid-cols-[1fr_420px] lg:items-start">
+        <div className="relative z-10 grid gap-8 lg:grid-cols-[1fr_420px] lg:items-start lg:gap-10">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
               Mon parcours professionnel jusqu&apos;à présent
@@ -220,7 +258,7 @@ const About = () => {
           </div>
 
           <div className="grid gap-6">
-            <div className="rounded-2xl border border-white/20 bg-white/5 p-5">
+            <div className="rounded-2xl border border-white/20 bg-white/5 p-4 sm:p-5">
               <div className="text-sm font-semibold text-white/90">
                 Hard skills
               </div>
@@ -246,7 +284,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-white/20 bg-white/5 p-5">
+            <div className="rounded-2xl border border-white/20 bg-white/5 p-4 sm:p-5">
               <div className="text-sm font-semibold text-white/90">
                 Soft skills
               </div>
