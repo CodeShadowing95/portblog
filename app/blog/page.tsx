@@ -112,7 +112,7 @@ export default function BlogPage() {
   }
 
   return (
-    <main className="mx-auto w-full max-w-6xl flex-1 mt-10">
+    <main className="mx-auto w-full max-w-6xl flex-1 mt-16">
       {featured ? (
         <section className="overflow-hidden rounded-3xl border border-white/20 bg-white/10 shadow-lg backdrop-blur-md">
           <div className="grid gap-0 md:grid-cols-[340px_1fr]">
@@ -138,7 +138,7 @@ export default function BlogPage() {
                   type="button"
                   variant="ghost"
                   onClick={() => share(featured)}
-                  className="h-9 rounded-xl text-white/90 hover:bg-white/10 hover:text-white"
+                  className="h-9 w-9 rounded-xl p-0 text-white/90 hover:bg-white/10 hover:text-white"
                   aria-label="Partager l’article"
                 >
                   <Share2 />
@@ -156,7 +156,7 @@ export default function BlogPage() {
                 {featured.excerpt}
               </p>
 
-              <div className="flex items-center justify-between gap-3 pt-2">
+              <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
                 <div className="text-sm font-semibold text-white/85">
                   Patrick NAMEGNI
                 </div>
@@ -172,13 +172,15 @@ export default function BlogPage() {
         </section>
       ) : null}
 
-      <section className="mt-10 mb-16 flex justify-center">
-        <div className="flex flex-wrap gap-4">
+      <section className="mt-8">
+        <div className="-mx-4 overflow-x-auto px-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="flex w-max gap-3 pr-4">
           {levels.map((l) => (
             <FilterBadge key={l} active={level === l} onClick={() => setLevel(l)}>
               {l}
             </FilterBadge>
           ))}
+          </div>
         </div>
       </section>
 
@@ -196,6 +198,7 @@ export default function BlogPage() {
                 width={1200}
                 height={630}
                 className="h-44 w-full object-cover"
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/55 via-black/10 to-transparent" />
               <div className="absolute left-4 top-4 flex flex-wrap gap-2">
@@ -213,7 +216,7 @@ export default function BlogPage() {
                   type="button"
                   variant="ghost"
                   onClick={() => share(post)}
-                  className="h-9 rounded-xl text-white/90 hover:bg-white/10 hover:text-white"
+                  className="h-9 w-9 rounded-xl p-0 text-white/90 hover:bg-white/10 hover:text-white"
                 >
                   <Share2 />
                 </Button>
@@ -241,7 +244,7 @@ export default function BlogPage() {
       </section>
 
       {toast ? (
-        <div className="fixed bottom-6 left-1/2 z-200 -translate-x-1/2 rounded-2xl border border-white/20 bg-black/60 px-4 py-3 text-sm text-white shadow-lg backdrop-blur-md">
+        <div className="fixed bottom-6 left-1/2 z-[200] w-[min(92vw,520px)] -translate-x-1/2 rounded-2xl border border-white/20 bg-black/60 px-4 py-3 text-sm text-white shadow-lg backdrop-blur-md">
           {toast}
         </div>
       ) : null}
